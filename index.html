@@ -47,11 +47,8 @@
         .card-bg {
             background-color: #1F2937; /* Gray 800 */
         }
-        .glassmorphism {
-            background: rgba(31, 41, 55, 0.5);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .video-container {
+            aspect-ratio: 16 / 9;
         }
     </style>
     
@@ -76,28 +73,34 @@
 </head>
 <body class="bg-[#0B1120] text-gray-200 antialiased">
 
-    <!-- HERO SECTION (OTIMIZADO) -->
+    <!-- HERO SECTION (OTIMIZADO COM VSL) -->
     <header class="relative overflow-hidden py-20 md:py-24">
         <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
         <div class="container mx-auto px-6 text-center relative z-10">
+            <!-- Título Otimizado -->
             <h1 data-aos="fade-down" class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 font-lexend">
                 O Método Científico para Silenciar a Ansiedade e Retomar o Controle da Sua Mente
             </h1>
+            <!-- Subtítulo Otimizado -->
             <p data-aos="fade-down" data-aos-delay="200" class="text-lg md:text-xl font-light text-green-400 mb-8 max-w-3xl mx-auto">
                 Um guia prático com técnicas validadas para você acalmar seus pensamentos, dormir melhor e focar no que realmente importa. <span class="font-semibold text-white">Acesso imediato por apenas R$19,90.</span>
             </p>
             
+            <!-- Vídeo de Vendas (VSL) Integrado -->
             <div data-aos="fade-up" data-aos-delay="400" class="flex justify-center my-10">
-                <div class="relative w-64 md:w-72 group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-500"></div>
-                    <img src="https://i.imgur.com/A76iL9l.png" alt="Capa do ebook A Ciência da Calma" class="relative w-full rounded-lg shadow-2xl">
+                <div class="w-full max-w-3xl mx-auto">
+                    <div class="relative rounded-lg overflow-hidden bg-black border-2 border-gray-700 shadow-2xl video-container">
+                        <video class="w-full h-full object-cover" src="https://i.imgur.com/fVUeK1O.mp4" playsinline autoplay muted loop controls></video>
+                    </div>
                 </div>
             </div>
             
+            <!-- CTA Otimizado -->
             <a href="https://pay.kiwify.com.br/ADV5QRX" data-aos="fade-up" data-aos-delay="600" class="cta-gradient text-white font-bold text-lg md:text-xl py-4 px-12 rounded-full shadow-lg cta-glow inline-block">
                 SIM, QUERO ACALMAR MINHA MENTE!
             </a>
             
+            <!-- Menção ao Bônus Otimizada -->
             <p data-aos="fade-up" data-aos-delay="650" class="text-sm text-gray-400 mt-4">E ainda receba o bônus exclusivo: Diário de Pensamentos em PDF.</p>
             
             <div data-aos="fade-up" data-aos-delay="700" class="flex justify-center items-center space-x-6 mt-6 text-gray-400 text-sm">
@@ -327,7 +330,7 @@
         </div>
     </footer>
 
-    <!-- Lucide Icons -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -336,8 +339,6 @@
             }
         });
     </script>
-
-    <!-- AOS - Animate on Scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
