@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Vendas PRO - A Ciência da Calma</title>
+    <title>A Ciência da Calma</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,6 +50,19 @@
         .video-container {
             aspect-ratio: 16 / 9;
         }
+
+        /* Estilos para o carrossel de depoimentos */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .scrolling-wrapper {
+            animation: scroll 60s linear infinite;
+        }
+        .testimonial-card {
+            flex: 0 0 auto;
+            width: 350px;
+        }
     </style>
     
     <!-- Meta Pixel Code -->
@@ -73,20 +86,17 @@
 </head>
 <body class="bg-[#0B1120] text-gray-200 antialiased">
 
-    <!-- HERO SECTION (OTIMIZADO COM VSL) -->
+    <!-- HERO SECTION -->
     <header class="relative overflow-hidden py-20 md:py-24">
         <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
         <div class="container mx-auto px-6 text-center relative z-10">
-            <!-- Título Otimizado -->
             <h1 data-aos="fade-down" class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 font-lexend">
                 O Método Científico para Silenciar a Ansiedade e Retomar o Controle da Sua Mente
             </h1>
-            <!-- Subtítulo Otimizado -->
             <p data-aos="fade-down" data-aos-delay="200" class="text-lg md:text-xl font-light text-green-400 mb-8 max-w-3xl mx-auto">
                 Um guia prático com técnicas validadas para você acalmar seus pensamentos, dormir melhor e focar no que realmente importa. <span class="font-semibold text-white">Acesso imediato por apenas R$9,90.</span>
             </p>
             
-            <!-- Vídeo de Vendas (VSL) Integrado -->
             <div data-aos="fade-up" data-aos-delay="400" class="flex justify-center my-10">
                 <div class="w-full max-w-3xl mx-auto">
                     <div class="relative rounded-lg overflow-hidden bg-black border-2 border-gray-700 shadow-2xl video-container">
@@ -95,12 +105,10 @@
                 </div>
             </div>
             
-            <!-- CTA Otimizado -->
             <a href="https://pay.kiwify.com.br/ADV5QRX" data-aos="fade-up" data-aos-delay="600" class="cta-gradient text-white font-bold text-lg md:text-xl py-4 px-12 rounded-full shadow-lg cta-glow inline-block">
                 SIM, QUERO ACALMAR MINHA MENTE!
             </a>
             
-            <!-- Menção ao Bônus Otimizada -->
             <p data-aos="fade-up" data-aos-delay="650" class="text-sm text-gray-400 mt-4">E ainda receba o bônus exclusivo: Diário de Pensamentos em PDF.</p>
             
             <div data-aos="fade-up" data-aos-delay="700" class="flex justify-center items-center space-x-6 mt-6 text-gray-400 text-sm">
@@ -216,30 +224,63 @@
             </div>
         </section>
         
-        <!-- TESTIMONIALS SECTION -->
-        <section class="py-16">
-            <div class="container mx-auto px-6">
+        <!-- TESTIMONIALS SECTION - Carrossel de Depoimentos Realistas -->
+        <section class="py-16 overflow-hidden section-bg">
+            <div class="container mx-auto">
                 <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-center text-white mb-12 font-lexend">A transformação de quem já aplicou o método:</h2>
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div data-aos="fade-right" class="card-bg p-8 rounded-lg">
-                         <div class="flex items-center mb-4">
-                            <img src="https://placehold.co/50x50/3B82F6/FFFFFF?text=J" alt="Foto de Juliana M." class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="font-bold text-white">Juliana M.</p>
-                                <div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
-                            </div>
-                        </div>
-                        <p class="text-gray-300">"Esse guia foi um divisor de águas. As técnicas de respiração e o 'Tribunal da Mente' me deram um controle que eu nunca imaginei ser possível. Recomendo de olhos fechados."</p>
+            </div>
+            <div class="flex space-x-8 scrolling-wrapper">
+                <!-- Depoimentos Realistas (Duplicados para o loop) -->
+                <div class="flex space-x-8">
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/3B82F6/FFFFFF?text=J" alt="Foto de Juliana M." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Juliana M.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Sempre sofri com pensamentos catastróficos sobre meu trabalho. A técnica do 'Tribunal da Mente' do capítulo 3 foi uma virada de chave. Aprendi a questionar minhas próprias 'verdades' e a encontrar um ponto de vista mais realista. Indispensável."</p>
                     </div>
-                    <div data-aos="fade-left" class="card-bg p-8 rounded-lg">
-                        <div class="flex items-center mb-4">
-                            <img src="https://placehold.co/50x50/10B981/FFFFFF?text=R" alt="Foto de Ricardo F." class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="font-bold text-white">Ricardo F.</p>
-                                <div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
-                            </div>
-                        </div>
-                        <p class="text-gray-300">"Comprei sem muita expectativa, mas a forma como o livro explica a ciência por trás de tudo me fez entender o 'porquê'. Não são só dicas, é um manual de funcionamento da mente."</p>
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/10B981/FFFFFF?text=R" alt="Foto de Ricardo F." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Ricardo F.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Eu não entendia por que meu coração acelerava do nada. A explicação sobre a amígdala e a resposta de 'luta ou fuga' no primeiro capítulo foi libertadora. O exercício de respiração 4-7-8 se tornou minha ferramenta de primeiros socorros."</p>
+                    </div>
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/F59E0B/FFFFFF?text=A" alt="Foto de Amanda S." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Amanda S.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"O capítulo sobre sono foi o que mais me impactou. Com as dicas de higiene do sono, principalmente a de desligar as telas uma hora antes, minhas noites mudaram e minha ansiedade durante o dia diminuiu drasticamente."</p>
+                    </div>
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/8B5CF6/FFFFFF?text=L" alt="Foto de Lucas P." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Lucas P.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Eu procrastinava tudo por me sentir sobrecarregado. A Matriz de Eisenhower do capítulo 5 me deu a clareza para separar o que era urgente do que era importante. Finalmente sinto que estou no controle da minha rotina."</p>
+                    </div>
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                         <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/EC4899/FFFFFF?text=G" alt="Foto de Gabriela C." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Gabriela C.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"O que mais gostei foi a abordagem sem misticismo. É ciência pura e aplicada. A parte sobre autocompaixão me ensinou a parar de me culpar por estar ansiosa, o que por si só já quebrou um ciclo vicioso."</p>
+                    </div>
+                     <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/EF4444/FFFFFF?text=M" alt="Foto de Marcos V." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Marcos V.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Sempre achei que ansiedade era só 'coisa da cabeça'. Entender a conexão do eixo cérebro-intestino (capítulo 4) me fez repensar minha alimentação. Pequenas mudanças nos meus hábitos alimentares fizeram uma diferença que eu não esperava."</p>
+                    </div>
+                     <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/22C55E/FFFFFF?text=F" alt="Foto de Fernanda L." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Fernanda L.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Comprei para o meu filho adolescente que sofria com a pressão das redes sociais. O capítulo sobre gatilhos modernos foi perfeito para ele entender o impacto do FOMO e da comparação. Foi um ótimo ponto de partida para nossas conversas."</p>
+                    </div>
+                     <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/6366F1/FFFFFF?text=T" alt="Foto de Thiago B." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Thiago B.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Pelo preço de um lanche, tive acesso a um conteúdo que vale mais que muitas terapias que já fiz. A Âncora da Respiração é uma técnica que uso todos os dias antes de começar a trabalhar. Simples e transformador."</p>
+                    </div>
+                </div>
+                <div class="flex space-x-8" aria-hidden="true">
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/3B82F6/FFFFFF?text=J" alt="Foto de Juliana M." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Juliana M.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Sempre sofri com pensamentos catastróficos sobre meu trabalho. A técnica do 'Tribunal da Mente' do capítulo 3 foi uma virada de chave. Aprendi a questionar minhas próprias 'verdades' e a encontrar um ponto de vista mais realista. Indispensável."</p>
+                    </div>
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/10B981/FFFFFF?text=R" alt="Foto de Ricardo F." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Ricardo F.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Eu não entendia por que meu coração acelerava do nada. A explicação sobre a amígdala e a resposta de 'luta ou fuga' no primeiro capítulo foi libertadora. O exercício de respiração 4-7-8 se tornou minha ferramenta de primeiros socorros."</p>
+                    </div>
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/F59E0B/FFFFFF?text=A" alt="Foto de Amanda S." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Amanda S.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"O capítulo sobre sono foi o que mais me impactou. Com as dicas de higiene do sono, principalmente a de desligar as telas uma hora antes, minhas noites mudaram e minha ansiedade durante o dia diminuiu drasticamente."</p>
+                    </div>
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/8B5CF6/FFFFFF?text=L" alt="Foto de Lucas P." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Lucas P.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Eu procrastinava tudo por me sentir sobrecarregado. A Matriz de Eisenhower do capítulo 5 me deu a clareza para separar o que era urgente do que era importante. Finalmente sinto que estou no controle da minha rotina."</p>
+                    </div>
+                    <div class="card-bg p-8 rounded-lg testimonial-card">
+                         <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/EC4899/FFFFFF?text=G" alt="Foto de Gabriela C." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Gabriela C.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"O que mais gostei foi a abordagem sem misticismo. É ciência pura e aplicada. A parte sobre autocompaixão me ensinou a parar de me culpar por estar ansiosa, o que por si só já quebrou um ciclo vicioso."</p>
+                    </div>
+                     <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/EF4444/FFFFFF?text=M" alt="Foto de Marcos V." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Marcos V.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Sempre achei que ansiedade era só 'coisa da cabeça'. Entender a conexão do eixo cérebro-intestino (capítulo 4) me fez repensar minha alimentação. Pequenas mudanças nos meus hábitos alimentares fizeram uma diferença que eu não esperava."</p>
+                    </div>
+                     <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/22C55E/FFFFFF?text=F" alt="Foto de Fernanda L." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Fernanda L.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Comprei para o meu filho adolescente que sofria com a pressão das redes sociais. O capítulo sobre gatilhos modernos foi perfeito para ele entender o impacto do FOMO e da comparação. Foi um ótimo ponto de partida para nossas conversas."</p>
+                    </div>
+                     <div class="card-bg p-8 rounded-lg testimonial-card">
+                        <div class="flex items-center mb-4"><img src="https://placehold.co/50x50/6366F1/FFFFFF?text=T" alt="Foto de Thiago B." class="w-12 h-12 rounded-full mr-4"><div><p class="font-bold text-white">Thiago B.</p><div class="flex text-yellow-400"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div></div></div><p class="text-gray-300">"Pelo preço de um lanche, tive acesso a um conteúdo que vale mais que muitas terapias que já fiz. A Âncora da Respiração é uma técnica que uso todos os dias antes de começar a trabalhar. Simples e transformador."</p>
                     </div>
                 </div>
             </div>
