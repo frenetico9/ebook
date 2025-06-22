@@ -54,6 +54,25 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1244535774077894');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1244535774077894&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
 </head>
 <body class="bg-[#0B1120] text-gray-200 antialiased">
 
@@ -61,11 +80,9 @@
     <header class="relative overflow-hidden py-20 md:py-24">
         <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
         <div class="container mx-auto px-6 text-center relative z-10">
-            <!-- [MUDANÇA #1] Título mais direto e focado na solução -->
             <h1 data-aos="fade-down" class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 font-lexend">
                 O Método Científico para Silenciar a Ansiedade e Retomar o Controle da Sua Mente
             </h1>
-            <!-- [MUDANÇA #2] Subtítulo com benefícios claros e preço (quebra de objeção) -->
             <p data-aos="fade-down" data-aos-delay="200" class="text-lg md:text-xl font-light text-green-400 mb-8 max-w-3xl mx-auto">
                 Um guia prático com técnicas validadas para você acalmar seus pensamentos, dormir melhor e focar no que realmente importa. <span class="font-semibold text-white">Acesso imediato por apenas R$19,90.</span>
             </p>
@@ -77,12 +94,10 @@
                 </div>
             </div>
             
-            <!-- [MUDANÇA #3] CTA mais pessoal e focado no desejo -->
             <a href="https://pay.kiwify.com.br/ADV5QRX" data-aos="fade-up" data-aos-delay="600" class="cta-gradient text-white font-bold text-lg md:text-xl py-4 px-12 rounded-full shadow-lg cta-glow inline-block">
                 SIM, QUERO ACALMAR MINHA MENTE!
             </a>
             
-            <!-- [MUDANÇA #4] Menção ao bônus para aumentar valor percebido -->
             <p data-aos="fade-up" data-aos-delay="650" class="text-sm text-gray-400 mt-4">E ainda receba o bônus exclusivo: Diário de Pensamentos em PDF.</p>
             
             <div data-aos="fade-up" data-aos-delay="700" class="flex justify-center items-center space-x-6 mt-6 text-gray-400 text-sm">
@@ -93,7 +108,7 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT (Sem mudanças estruturais, pois a base é boa) -->
+    <!-- MAIN CONTENT -->
     <main>
         <!-- PROBLEM/AGITATION SECTION -->
         <section class="py-16 section-bg">
@@ -257,7 +272,7 @@
                     </div>
                     <p class="text-white">POR APENAS:</p>
                     <p class="text-5xl md:text-6xl font-extrabold text-white my-2 font-lexend">R$ 19,90</p>
-                    <p class="text-gray-400 mb-6">ou 4x de R$ 5,42</p>
+                    <p class="text-gray-400 mb-6">ou 5x de R$ 3,98</p>
                     <a href="https://pay.kiwify.com.br/ADV5QRX" class="cta-gradient text-white font-bold text-lg md:text-xl py-4 px-10 rounded-full shadow-lg cta-glow inline-block w-full">
                         GARANTIR MEU ACESSO COM DESCONTO
                     </a>
@@ -277,7 +292,6 @@
                             <i data-lucide="chevron-down" class="w-5 h-5 text-green-400 transform transition-transform" :class="{'rotate-180': open === 1}"></i>
                         </button>
                         <div x-show="open === 1" x-collapse class="px-5 pb-5 text-gray-300">
-                             <!-- [MUDANÇA #5] Texto da entrega mais específico e confiável -->
                             <p>O acesso é imediato. Após a confirmação do pagamento, você receberá um e-mail com as instruções para acessar a Área de Membros da Kiwify, onde poderá baixar todo o material em formato PDF. Você poderá ler em seu celular, tablet ou computador.</p>
                         </div>
                     </div>
@@ -316,9 +330,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        // Adicionado um listener para garantir que o script só rode depois que o HTML for carregado
         window.addEventListener('DOMContentLoaded', (event) => {
-            // A biblioteca lucide-react pode não estar disponível, então verificamos se a função existe
             if (window.lucide) {
                 lucide.createIcons();
             }
