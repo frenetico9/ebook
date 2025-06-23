@@ -104,6 +104,32 @@
                     </div>
                 </div>
             </div>
+
+            <!-- COUNTDOWN TIMER SECTION -->
+            <div id="countdown-container" data-aos="fade-up" data-aos-delay="500" class="max-w-md mx-auto my-8 p-4 border-2 border-red-500/50 rounded-lg bg-gray-900/50">
+                <h3 class="text-lg font-semibold text-red-400 uppercase tracking-wider mb-3">Oferta de Lançamento Termina Em:</h3>
+                <div id="countdown" class="flex justify-center items-center space-x-4 text-white">
+                    <div class="text-center">
+                        <span id="days" class="text-4xl font-bold font-lexend">00</span>
+                        <span class="block text-xs text-gray-400">DIAS</span>
+                    </div>
+                    <span class="text-4xl font-bold">:</span>
+                    <div class="text-center">
+                        <span id="hours" class="text-4xl font-bold font-lexend">00</span>
+                        <span class="block text-xs text-gray-400">HORAS</span>
+                    </div>
+                    <span class="text-4xl font-bold">:</span>
+                    <div class="text-center">
+                        <span id="minutes" class="text-4xl font-bold font-lexend">00</span>
+                        <span class="block text-xs text-gray-400">MINUTOS</span>
+                    </div>
+                    <span class="text-4xl font-bold">:</span>
+                    <div class="text-center">
+                        <span id="seconds" class="text-4xl font-bold font-lexend">00</span>
+                        <span class="block text-xs text-gray-400">SEGUNDOS</span>
+                    </div>
+                </div>
+            </div>
             
             <a href="https://pay.kiwify.com.br/ADV5QRX" data-aos="fade-up" data-aos-delay="600" class="cta-gradient text-white font-bold text-lg md:text-xl py-4 px-12 rounded-full shadow-lg cta-glow inline-block">
                 SIM, QUERO ACALMAR MINHA MENTE!
@@ -121,6 +147,31 @@
 
     <!-- MAIN CONTENT -->
     <main>
+        <!-- IDENTIFICATION SECTION (FROM IMAGE) -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-center text-white mb-12 font-lexend">Se você se identifica com isso, este guia é para você:</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-lg">
+                    <div data-aos="fade-right" class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 text-green-400 mt-1"><i data-lucide="moon-star" class="w-7 h-7"></i></div>
+                        <p class="text-gray-300">Você sente que sua mente <strong class="text-white">nunca desliga</strong>, mesmo na hora de dormir.</p>
+                    </div>
+                    <div data-aos="fade-left" class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 text-green-400 mt-1"><i data-lucide="heart-pulse" class="w-7 h-7"></i></div>
+                        <p class="text-gray-300">Você sofre com <strong class="text-white">sintomas físicos</strong> como coração acelerado e falta de ar.</p>
+                    </div>
+                    <div data-aos="fade-right" class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 text-green-400 mt-1"><i data-lucide="calendar-clock" class="w-7 h-7"></i></div>
+                        <p class="text-gray-300">Você <strong class="text-white">procrastina tarefas importantes</strong> por se sentir sobrecarregado(a).</p>
+                    </div>
+                    <div data-aos="fade-left" class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 text-green-400 mt-1"><i data-lucide="brain-cog" class="w-7 h-7"></i></div>
+                        <p class="text-gray-300">Você busca por <strong class="text-white">soluções práticas e baseadas em ciência</strong>, sem misticismo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- PROBLEM/AGITATION SECTION -->
         <section class="py-16 section-bg">
             <div class="container mx-auto px-6">
@@ -374,11 +425,50 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
+        // Initialize Lucide Icons
         window.addEventListener('DOMContentLoaded', (event) => {
             if (window.lucide) {
                 lucide.createIcons();
             }
         });
+
+        // Countdown Timer Logic
+        function startCountdown() {
+            // Set the date we're counting down to (10 minutes from now)
+            const countDownDate = new Date();
+            countDownDate.setMinutes(countDownDate.getMinutes() + 10);
+
+            // Update the count down every 1 second
+            const x = setInterval(function() {
+
+                // Get today's date and time
+                const now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                const distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the respective elements
+                document.getElementById("days").innerText = String(days).padStart(2, '0');
+                document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+                document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown-container").innerHTML = '<h3 class="text-lg font-semibold text-red-400 uppercase tracking-wider">OFERTA ENCERRADA</h3>';
+                }
+            }, 1000);
+        }
+
+        window.addEventListener('load', startCountdown);
+
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -388,4 +478,4 @@
       });
     </script>
 </body>
-</ht
+</html>
